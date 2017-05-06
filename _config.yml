@@ -1,15 +1,15 @@
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-# permalink:           pretty
-# relative_permalinks: true
+#permalink:           pretty
+#relative_permalinks: true
 
 # Setup
 title:               Gustos
 tagline:             'Gustos Blog'
 description:         'Gustos Blog'
-url:                 http://lanyon.getpoole.com
-# baseurl:             ''
+url:                 https://jucie15.github.io
+baseurl:             ''
 paginate:            5
 
 # About/contact
