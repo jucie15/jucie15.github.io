@@ -180,7 +180,7 @@ def pledge_dislike(request, pledge_pk):
 
 - urls.py
 
-```python
+```Django
 urlpatterns = [
 	url(r'^(?P<pledge_pk>\d+)/pledge_like/$', views.pledge_like, name='pledge_like'),
 	url(r'^(?P<pledge_pk>\d+)/pledge_dislike/$', views.pledge_dislike, name='pledge_dislike'),
