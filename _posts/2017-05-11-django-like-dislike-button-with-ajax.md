@@ -196,7 +196,7 @@ urlpatterns = [
 - Pledge_detail.html
 - javascript ajax 코드 부분
 
-```javascript
+```django
 <script type="text/javascript">
 // 좋아요 버튼 처리
 // 버튼 클릭 > ajax통신 (like url로 전달) > views의 like 메소드에서 리턴하는 값 전달받기 > 성공시 콜백 호출
