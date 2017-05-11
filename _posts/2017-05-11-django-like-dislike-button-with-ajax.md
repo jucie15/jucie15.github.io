@@ -133,8 +133,6 @@ def pledge_like(request, pledge_pk):
     return HttpResponse(json.dumps(context), content_type='application/json')
 ```
 
-#### 
-
 - #### 	싫어요 버튼 클릭 시	
 
 ```python
