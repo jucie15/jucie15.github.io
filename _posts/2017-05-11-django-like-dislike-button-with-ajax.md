@@ -181,7 +181,6 @@ def pledge_dislike(request, pledge_pk):
 - urls.py
 
 ```python
-
 url(r'^(?P<pledge_pk>\d+)/pledge_like/$', views.pledge_like, name='pledge_like'),
 url(r'^(?P<pledge_pk>\d+)/pledge_dislike/$', views.pledge_dislike, name='pledge_dislike'),
 ```
@@ -192,10 +191,9 @@ url(r'^(?P<pledge_pk>\d+)/pledge_dislike/$', views.pledge_dislike, name='pledge_
 
 - 임시로 버튼 2개 생성 후 ajax 통신 코드 추가
 - Pledge_detail.html
-  - javascript ajax 코드 부분
+- javascript ajax 코드 부분
 
 ```javascript
-
 <script type="text/javascript">
 // 좋아요 버튼 처리
 // 버튼 클릭 > ajax통신 (like url로 전달) > views의 like 메소드에서 리턴하는 값 전달받기 > 성공시 콜백 호출
@@ -243,7 +241,7 @@ $('.dislike').click(function(){
 
 -  html 버튼 추가 부분
 
-```Html
+```html
 <input type="button" class="like" name="{{ pledge.pk }}" value="Like"> <!-- 좋아요 버튼 -->
 <p id="like_count{{ pledge.pk }}">count : {{ pledge.get_total_like }}</p> <!-- 좋아요 개수 표시 -->
 
