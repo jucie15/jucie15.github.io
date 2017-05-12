@@ -185,70 +185,7 @@ urlpatterns = [
 	url(r'^(?P<pledge_pk>\d+)/pledge_like/$', views.pledge_like, name='pledge_like'),
 	url(r'^(?P<pledge_pk>\d+)/pledge_dislike/$', views.pledge_dislike, name='pledge_dislike'),
 ]
-
 ```
 
 
-
-### 템플릿에 버튼 및 ajax 코드 추가
-
-- 임시로 버튼 2개 생성 후 ajax 통신 코드 추가
-- Pledge_detail.html
-- javascript ajax 코드 부분
-
-```js
-<script type="text/javascript">
-// 좋아요 버튼 처리
-// 버튼 클릭 > ajax통신 (like url로 전달) > views의 like 메소드에서 리턴하는 값 전달받기 > 성공시 콜백 호출
-$('.like').click(function(){
-  var pk = $(this).attr('name') // 클릭한 요소의 attribute 중 name의 값을 가져온다.
-  $.ajax({
-      url: "{% url 'pledge:pledge_like' pledge.pk %}", // 통신할 url을 지정한다.
-      data: {'csrfmiddlewaretoken': '{{ csrf_token }}'}, // 서버로 데이터를 전송할 때 이 옵션을 사용한다.
-      dataType: "json", // 서버측에서 전송한 데이터를 어떤 형식의 데이터로서 해석할 것인가를 지정한다. 없으면 알아서 판단한다.
-
-      success: function(response){
-        // 요청이 성공했을 경우 좋아요/싫어요 개수 레이블 업데이트
-        $('#like_count'+ pk).html("count : "+ response.like_count);
-        $('#dislike_count'+ pk).html("count : "+ response.dislike_count);
-      },
-      error:function(error){
-        // 요청이 실패했을 경우
-        alert(error)
-      }
-  });
-})
-
-// 싫어요 버튼 처리
-// 버튼 클릭 > ajax통신 (dislike url로 전달) > views의 dislike 메소드에서 리턴하는 값 전달받기 > 성공시 콜백 호출
-$('.dislike').click(function(){
-  var pk = $(this).attr('name') // 클릭한 요소의 attribute 중 name의 값을 가져온다.
-  $.ajax({
-      url: "{% url 'pledge:pledge_dislike' pledge.pk %}", // 통신할 url을 지정한다.
-      data: {'csrfmiddlewaretoken': '{{ csrf_token }}'}, // 서버로 데이터를 전송할 때 이 옵션을 사용한다.
-      dataType: "json", // 서버측에서 전송한 데이터를 어떤 형식의 데이터로서 해석할 것인가를 지정한다. 없으면 알아서 판단한다.
-
-      success: function(response){
-        // 요청이 성공했을 경우 좋아요/싫어요 개수 레이블 업데이트
-        $('#like_count'+ pk).html("count : "+ response.like_count);
-        $('#dislike_count'+ pk).html("count : "+ response.dislike_count);
-      },
-      error:function(error){
-        // 요청이 실패했을 경우
-        alert(error)
-      }
-  });
-})
-</script>
-```
-
--  html 버튼 추가 부분
-
-```html
-<input type="button" class="like" name="{{ pledge.pk }}" value="Like"> <!-- 좋아요 버튼 -->
-<p id="like_count{{ pledge.pk }}">count : {{ pledge.get_total_like }}</p> <!-- 좋아요 개수 표시 -->
-
-<input type="button" class="dislike" name="{{ pledge.pk }}" value="Dislike"> <!-- 싫어요 버튼 -->
-<p id="dislike_count{{ pledge.pk }}">count : {{ pledge.get_total_dislike }}</p> <!-- 싫어요 개수 표시 -->
-```
 
