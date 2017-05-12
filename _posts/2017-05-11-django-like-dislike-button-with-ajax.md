@@ -195,7 +195,7 @@ urlpatterns = [
 - Pledge_detail.html
 - javascript ajax 코드 부분
 
-{% gist parkr / 949ece407a1c5d6fa27b98d64e782108 %}
+{% gist  jucie15/949ece407a1c5d6fa27b98d64e782108 %}
 
 -  html 버튼 추가 부분
 
