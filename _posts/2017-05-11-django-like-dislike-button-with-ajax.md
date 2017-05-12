@@ -3,8 +3,6 @@ layout: post
 title: Django 좋아요/싫어요 버튼 구현(ajax 이용)
 ---
 
-<script src="https://gist.github.com/jucie15/949ece407a1c5d6fa27b98d64e782108.js"></script>
-
 ### 구현 기능
 
 - 각 공약 별 좋아요/싫어요 버튼 추가
@@ -16,7 +14,7 @@ title: Django 좋아요/싫어요 버튼 구현(ajax 이용)
 ### LikeOrDisLike 관계 테이블 추가
 
 - 좋아요/싫어요를 위해 N:M 관계테이블에 like와 dislike 필드 추가 
-- 추후 pledge 모델에서 through통해 관계 생성
+- 추후 pledge 모델에서 `through`통해 관계 생성
 - models.py
 
 ```python
@@ -42,7 +40,7 @@ class LikeOrDislike(models.Model):
 - 참고 문서 : [related_name](http://stackoverflow.com/questions/2642613/what-is-related-name-used-for-in-django)
 - models.py 수정
 
-```Python
+```python
 class Pledge(models.Model):
     # 공약 모델
     congressman = models.ForeignKey(CongressMan) # 국회의원 모델과 1toN 관계 설정
@@ -76,24 +74,15 @@ class Pledge(models.Model):
 
 - 참고문서 : [view decorators](https://docs.djangoproject.com/en/1.10/topics/http/decorators/)
 
-- ManyToManyField에서 through 속성 이용시 add, create, set을 지원하지 않는다.
+- `ManyToManyField`에서 `through` 속성 이용시 add, create, set을 지원하지 않는다.
 
 - 추가 삭제 시 LikeOrDislike모델로 직접 접근
-
-- LikeOrDislike.objects.filter(pledge=pledge, user=user).delete() # 인스턴스 삭제
-
-- LikeOrDislike.objects.create(
-  ​                user=user,
-  ​                pledge=pledge,
-  ​                like=True,
-  ​                dislike=False,
-  ​                ) # 인스턴스 생성
 
 - views.py
 
   - #### 좋아요 버튼 클릭시
 
-```Python
+```python
 def pledge_like(request, pledge_pk):
     # 공약 좋아요 버튼 클릭시
     if request.is_ajax():
@@ -191,13 +180,14 @@ urlpatterns = [
 
 ### 템플릿에 버튼 및 ajax 코드 추가
 
-- 임시로 버튼 2개 생성 후 ajax 통신 코드 추가
+- 임시로 버튼 2개 생성 후 `ajax` 통신 코드 추가
 - Pledge_detail.html
 - javascript ajax 코드 부분
+  - `url` 태그때문인지 에러가 나 `gist`로 대체하여 코드 삽입
 
 {% gist  jucie15/949ece407a1c5d6fa27b98d64e782108 %}
 
--  html 버튼 추가 부분
+-  HTML 버튼 추가 부분
 
 ```html
 <input type="button" class="like" name="{{ pledge.pk }}" value="Like"> <!-- 좋아요 버튼 -->
