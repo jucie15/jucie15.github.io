@@ -180,7 +180,7 @@ def pledge_dislike(request, pledge_pk):
 
 - urls.py
 
-```Django
+```python
 urlpatterns = [
 	url(r'^(?P<pledge_pk>\d+)/pledge_like/$', views.pledge_like, name='pledge_like'),
 	url(r'^(?P<pledge_pk>\d+)/pledge_dislike/$', views.pledge_dislike, name='pledge_dislike'),
@@ -196,7 +196,7 @@ urlpatterns = [
 - Pledge_detail.html
 - javascript ajax 코드 부분
 
-```django
+```js
 <script type="text/javascript">
 // 좋아요 버튼 처리
 // 버튼 클릭 > ajax통신 (like url로 전달) > views의 like 메소드에서 리턴하는 값 전달받기 > 성공시 콜백 호출
