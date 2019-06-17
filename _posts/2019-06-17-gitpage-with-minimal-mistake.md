@@ -68,7 +68,7 @@ tags:
        - label: "Instagram"
          icon: "fab fa-fw fa-instagram"
          # url: "https://instagram.com/"
-   
+
    ```
 
    #### 기본 페이지 구성 정보
@@ -134,7 +134,7 @@ tags:
        url: /about/
      - title: "Post"
        url: /post-by-tags/
-       
+
    docs: # 컬렉션 별로 옆에 사이드바를 추가해줄 수 있다.
      - title: Getting Started
        children:
@@ -146,11 +146,11 @@ tags:
            url: /docs/installation/
          - title: "Upgrading"
            url: /docs/upgrading/
-           
+
    ''''''
    ```
 
-   
+
 
 4. ### 디렉토리 설정-컬렉션 추가(_config.yml)
 
@@ -160,10 +160,10 @@ tags:
      docs: # <- collection name
        output: true
        permalink: /:collection/:path/
-   
+
    ```
 
-   
+
 
 5. ### 페이지 추가(파일구조)
 
@@ -178,21 +178,21 @@ tags:
    sitemap: false
    permalink: /404.html
    ---
-   
+
    왓더퍽!!
-   
+
    <script>
      var GOOG_FIXURL_LANG = 'en';
      var GOOG_FIXURL_SITE = '{{ site.url }}'
    </script>
    <script src="https://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js">
    </script>
-   
+
    ```
 
    - ##### tag-posts.html
 
-   ```html
+   ```md
    ---
    layout: archive
    permalink: /post-by-tags/
@@ -218,7 +218,7 @@ tags:
        {% include archive-single.html %}
      {% endfor %}
    {% endfor %}
-   
+
    ```
 
    #### 업로드 할 포스트들 -> `_posts`
