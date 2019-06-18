@@ -10,10 +10,9 @@ tags:
 
 
 
-#### Refer
-
-   - [2.2 Documentation](https://mmistakes.github.io/minimal-mistakes/docs/docs-2-2/)
-   - [Jekyll 블로그 테마 적용하기 (minimal-mistakes)](https://junhobaik.github.io/jekyll-apply-theme/)
+- ### Refer
+     - [2.2 Documentation](https://mmistakes.github.io/minimal-mistakes/docs/docs-2-2/)
+     - [Jekyll 블로그 테마 적용하기 (minimal-mistakes)](https://junhobaik.github.io/jekyll-apply-theme/)
 
 
 
@@ -181,22 +180,23 @@ tags:
    sitemap: false
    permalink: /404.html
    ---
-
+   
    왓더퍽!!
-
+   
    <script>
      var GOOG_FIXURL_LANG = 'en';
      var GOOG_FIXURL_SITE = '{{ site.url }}'
    </script>
    <script src="https://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js">
    </script>
-
+   
    ```
 
    - ##### tag-posts.html
 
    ```html
-   {% raw %}
+   {%raw%}
+   
    ---
    layout: archive
    permalink: /post-by-tags/
@@ -222,8 +222,9 @@ tags:
        {% include archive-single.html %}
      {% endfor %}
    {% endfor %}
-   {% endraw %}
-
+   
+   {%endraw%}
+   
    ```
 
    #### 업로드 할 포스트들 -> `_posts`
