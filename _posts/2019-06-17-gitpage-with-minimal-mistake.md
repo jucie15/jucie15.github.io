@@ -8,11 +8,14 @@ tags:
 
 ##### [Quick-start-guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)를 많이 보고 참고하였습니다.
 
+
+
 #### Refer
 
-- [2.2 Documentation](https://mmistakes.github.io/minimal-mistakes/docs/docs-2-2/)
+   - [2.2 Documentation](https://mmistakes.github.io/minimal-mistakes/docs/docs-2-2/)
+   - [Jekyll 블로그 테마 적용하기 (minimal-mistakes)](https://junhobaik.github.io/jekyll-apply-theme/)
 
-- [Jekyll 블로그 테마 적용하기 (minimal-mistakes)](https://junhobaik.github.io/jekyll-apply-theme/)
+
 
 1. ### 사이트 기본 정보 설정하기(_config.yml)
 
@@ -192,8 +195,8 @@ tags:
 
    - ##### tag-posts.html
 
-   ```
-   {% highlight html %}
+   ```html
+   {% raw %}
    ---
    layout: archive
    permalink: /post-by-tags/
@@ -219,7 +222,7 @@ tags:
        {% include archive-single.html %}
      {% endfor %}
    {% endfor %}
-   {% endhighlight %}
+   {% endraw %}
 
    ```
 
