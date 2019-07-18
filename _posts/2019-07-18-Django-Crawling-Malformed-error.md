@@ -2,8 +2,12 @@
 title: "[Django] 크롤링 시 Malformed attribute selector at position Error 해결하기"
 categories:
   - Django
+  - Crawling
 tags:
-  - Django,  Crawling
+  - Django
+  - Crawling
+  - Error
+  - TroubleShooting
 ---
 
 - ##### 크롤링 자체코드만 실행했을 때에는 잘 동작하던 코드가 장고서버내에서 실행하니 에러가 났다!!
