@@ -12,7 +12,7 @@ tags:
 
 - ##### 크롤링 자체코드만 실행했을 때에는 잘 동작하던 코드가 장고서버내에서 실행하니 에러가 났다!!
 
-![Django-Malformed-error](../_imgs/Django-Malformed-error.png)
+![Django-Malformed-error](../img/Django-Malformed-error.png)
 
 - ###  TroubleShooting
 
