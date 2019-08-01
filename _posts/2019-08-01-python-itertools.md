@@ -16,7 +16,7 @@ tags:
 
 ---
 
-1. ### count(start, step)
+- ### count(start, step)
     count 함수는 반복을 멈추기 위한 조건이 없다. 
 
     ```python
@@ -32,7 +32,7 @@ tags:
 
 ---
 
-2. ### cycle()
+- ### cycle()
     cycle함수는 순환가능한 객체의 요소를 무한히 반복한다.
     ```python
     arr = ['hello']
@@ -49,7 +49,7 @@ tags:
 
 ----
 
-3. ### repeat(obj, time)
+- ### repeat(obj, time)
     인자로 object와 반복할 숫자를 넣어주면 된다. time인자를 넣지 않으면 무한 반복되도록 구현되어있다.
     ```python
     list(repeat('hi', 5))
